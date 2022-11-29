@@ -3,6 +3,6 @@
   <select (change)="onDeptChange($event)">
     <option value="" >Select</option>
     <option [value]="dept.deptno" *ngFor="let dept of deptList"
-            >{{dept.deptno}}</option>
+            >{{dept.dname}}</option>
   </select>
 </div>

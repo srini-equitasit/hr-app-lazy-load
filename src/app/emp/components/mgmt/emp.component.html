@@ -1,4 +1,4 @@
-<app-dept-list (deptChange)="onDepartmentChanged($event)" ></app-dept-list>
+<app-dept-list (deptChange)="onDepartmentChanged($event)"></app-dept-list>
 
 <table id="emp" mat-table [dataSource]="empList">
 
@@ -19,8 +19,10 @@
 
   <!-- Deptno Column -->
   <ng-container matColumnDef="deptno">
-    <th *matHeaderCellDef> Dept No</th>
-    <td *matCellDef="let element"> {{element.deptno}} </td>
+    <th *matHeaderCellDef> Dept</th>
+    <td *matCellDef="let element">
+      <app-dept-name [deptNo]="element.deptno"></app-dept-name>
+    </td>
   </ng-container>
 
 

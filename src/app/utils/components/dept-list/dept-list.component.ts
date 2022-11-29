@@ -21,7 +21,8 @@ export class DeptListComponent implements OnInit {
     const deptAllObs = this.deptService.getAll();
 
     deptAllObs.subscribe((data: DeptDto[]) => {
-      this.deptList = data;
+      this.deptList = data
+      sessionStorage.setItem('deptList', JSON.stringify(this.deptList));
     });
   }
 
