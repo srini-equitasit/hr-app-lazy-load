@@ -1,0 +1,29 @@
+<table id="emp" mat-table [dataSource]="empList">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Empno Column -->
+  <ng-container matColumnDef="empno">
+    <th *matHeaderCellDef> Employee No.</th>
+    <td *matCellDef="let element"> {{element.empno}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="ename">
+    <th *matHeaderCellDef> Name</th>
+    <td *matCellDef="let element"> {{element.ename}} </td>
+  </ng-container>
+
+  <!-- Deptno Column -->
+  <ng-container matColumnDef="deptno">
+    <th *matHeaderCellDef> Dept No</th>
+    <td *matCellDef="let element"> {{element.deptno}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

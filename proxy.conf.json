@@ -1,0 +1,18 @@
+{
+  "/emp/": {
+    "target": "http://localhost:8081/emp",
+    "secure": false,
+    "pathRewrite": {
+      "^/emp/": ""
+    },
+    "logLevel": "debug"
+  },
+  "/dept/": {
+    "target": "http://localhost:8082/dept",
+    "secure": false,
+    "pathRewrite": {
+      "^/dept/": ""
+    },
+    "logLevel": "debug"
+  }
+}

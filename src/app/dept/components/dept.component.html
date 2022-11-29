@@ -1,0 +1,13 @@
+<table id="dept">
+  <tr>
+    <th>Dept No</th>
+    <th>Dept Name</th>
+    <th>Location</th>
+  </tr>
+  <tr *ngFor="let dept of deptList">
+    <td>{{dept.deptno}}</td>
+    <td>{{dept.dname}}</td>
+    <td>{{dept.loc}}</td>
+  </tr>
+
+</table>
