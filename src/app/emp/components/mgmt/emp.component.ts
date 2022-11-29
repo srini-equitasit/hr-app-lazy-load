@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {EmpDto} from "../model/emp.dto";
-import {EmpService} from "../service/emp.service";
+import {EmpDto} from "../../model/emp.dto";
+import {EmpService} from "../../service/emp.service";
 
 @Component({
   selector: 'app-emp',
@@ -11,7 +11,9 @@ export class EmpComponent implements OnInit {
 
   empList: EmpDto[] = [];
 
-  displayedColumns: string[] = ['empno', 'ename','deptno'];
+  originalEmpList: EmpDto[] = [];
+
+  displayedColumns: string[] = ['empno', 'ename', 'deptno'];
 
   constructor(private empService: EmpService) {
   }
@@ -23,8 +25,18 @@ export class EmpComponent implements OnInit {
 
     empAllObs.subscribe((data: EmpDto[]) => {
       this.empList = data;
+      this.originalEmpList = data;
     });
 
+  }
+
+  onDepartmentChanged(val: number) {
+
+    if (val) {
+      this.empList = this.originalEmpList.filter(emp => emp.deptno == val);
+    } else {
+      this.empList = this.originalEmpList;
+    }
   }
 
 }

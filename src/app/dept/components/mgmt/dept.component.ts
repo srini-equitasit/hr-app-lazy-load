@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {DeptDto} from "../model/dept.dto";
-import {EmpDto} from "../../emp/model/emp.dto";
-import {DeptService} from "../service/dept.service";
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {DeptDto} from "../../model/dept.dto";
+import {EmpDto} from "../../../emp/model/emp.dto";
+import {DeptService} from "../../service/dept.service";
 
 @Component({
   selector: 'app-dept',
@@ -11,6 +11,8 @@ import {DeptService} from "../service/dept.service";
 export class DeptComponent implements OnInit {
 
   deptList: DeptDto[] = [];
+
+
 
   constructor(private deptService: DeptService) {
   }
@@ -23,5 +25,7 @@ export class DeptComponent implements OnInit {
     });
 
   }
+
+
 
 }

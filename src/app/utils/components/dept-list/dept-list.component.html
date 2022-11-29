@@ -1,0 +1,8 @@
+<div class="dropdown-con">
+  Department
+  <select (change)="onDeptChange($event)">
+    <option value="" >Select</option>
+    <option [value]="dept.deptno" *ngFor="let dept of deptList"
+            >{{dept.deptno}}</option>
+  </select>
+</div>
