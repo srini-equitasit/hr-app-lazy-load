@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {EmpDto} from "../../emp/model/emp.dto";
 import {DeptDto} from "../model/dept.dto";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class DeptService {
 
   getAll(): Observable<DeptDto[]> {
 
-    return this.http.get<DeptDto[]>('/dept/');
+    return this.http.get<DeptDto[]>(environment.deptApi);
 
   }
 }
