@@ -14,7 +14,7 @@
   <!-- Name Column -->
   <ng-container matColumnDef="ename">
     <th *matHeaderCellDef> Name</th>
-    <td *matCellDef="let element"> {{element.ename}} </td>
+    <td *matCellDef="let element"> {{element.ename|lowercase}} </td>
   </ng-container>
 
   <!-- Deptno Column -->
@@ -22,6 +22,14 @@
     <th *matHeaderCellDef> Dept</th>
     <td *matCellDef="let element">
       <app-dept-name [deptNo]="element.deptno"></app-dept-name>
+    </td>
+  </ng-container>
+
+  <!-- HireDate Column -->
+  <ng-container matColumnDef="hiredate">
+    <th *matHeaderCellDef> Hire Date</th>
+    <td *matCellDef="let element">
+      {{element.hiredate|date}}
     </td>
   </ng-container>
 

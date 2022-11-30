@@ -13,7 +13,7 @@ export class EmpComponent implements OnInit {
 
   originalEmpList: EmpDto[] = [];
 
-  displayedColumns: string[] = ['empno', 'ename', 'deptno'];
+  displayedColumns: string[] = ['empno', 'ename','hiredate', 'deptno'];
 
   constructor(private empService: EmpService) {
   }
